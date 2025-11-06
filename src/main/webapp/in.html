@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Delight - The Best Coffee & Pastries</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <h1 class="logo">Caffeine</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#book">Book a Table</a></li>
+          <li><a href="onlineorder.html">Order</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contactform">Contact</a></li>
+           <li><a href="dashboard.html">Dashboard</a></li>
+       
+         
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Caffeine</h2>
+      <p>Where every cup of coffee tells a story</p>
+      <a href="#menu" class="cta-button">Explore Our Menu</a>
+      <a href="#book" class="cta-button">Book a Table</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At Caffeine, we pride ourselves on serving freshly brewed coffee, delicious pastries, and creating a cozy atmosphere.</p>
+    <img src="dan-smedley-765Ogj6zVuI-unsplash.jpg">
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="daniel-lincoln-ZpoR_dpHX4Q-unsplash.jpg" alt="Coffee">
+        <h3>Specialty Coffee</h3>
+        <p>Rich espresso, smooth lattes, and more!</p>
+      </div>
+      <div class="menu-item">
+        <img src="jordane-mathieu-mLtIBNInDGY-unsplash.jpg" alt="Pastries">
+        <h3>Delicious Pastries</h3>
+        <p>Croissants, muffins, and danishes</p>
+      </div>
+      <div class="menu-item">
+        <img src="mariia-lazor-IdXecWImsvQ-unsplash.jpg" alt="Sandwiches">
+        <h3>Gourmet Sandwiches</h3>
+        <p>Freshly made with love</p>
+      </div>
+    </div>
+    <a href="menu.html" class="cta-button">See Full Menu</a>
+  </section>
+
+  <section id="book" class="book-table">
+    <h2>Book a Table</h2>
+   <form action="BookTable" method="post">
+   <input type="text" name="id" placeholder="Your ID" required><br>
+  <input type="text" name="name" placeholder="Your Name" required><br>
+  <input type="date" name="date" required><br>
+  <input type="time" name="time" required><br>
+  <input type="number" name="people" placeholder="No. of People" min="1" required><br>
+  <button type="submit">Book Now</button>
+  </form>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review-slider">
+      <div class="review"><p>"Best coffee in town! Love the atmosphere."</p><p>- Honey L.</p></div>
+      <div class="review"><p>"The pastries are amazing! A must-visit spot."</p><p>- Bunny T.</p></div>
+      <div class="review"><p>"Great service and cozy vibes. I'll definitely be back!"</p><p>- Sugar K.</p></div>
+    </div>
+  </section>
+
+  <section id="contactform" class="contact-form">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, leave us a message below.</p>
+    <form action="Contact" method="post" >
+      <input type="text" name="na"  placeholder="Name"><br>
+      <input type="email" name="em" placeholder="Email"><br>
+      <textarea placeholder="Send a message" name="msg"  rows="5"></textarea><br>
+      <button>Send</button>
+    </form>
+    <br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <section id="login" class="login">
+   
+  </section>
+
+  <section id="signup" class="signup">
+   
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Caffeine | All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+  
+</body>
+</html>

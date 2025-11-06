@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caffeine Cafe Order</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffcc00;
+      letter-spacing: 3px;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .menu-item {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+      text-align: center;
+      color: #fff;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      filter: brightness(0.9);
+    }
+
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+      color: #ffcc00;
+    }
+
+    .menu-item p.price {
+      font-weight: bold;
+      margin: 5px 0 10px;
+      color: #ffd633;
+      font-size: 1.1rem;
+    }
+
+    .menu-item input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      font-size: 1rem;
+      border-radius: 5px;
+      background-color: #2e2e2e;
+      color: #eee;
+    }
+
+    .total {
+      max-width: 400px;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #555;
+      background-color: #2e2e2e;
+      color: #eee;
+    }
+
+    form button {
+      background-color: #ffcc00;
+      color: #121212;
+      font-size: 1.2rem;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Caffeine</h1>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="menu">
+    <div class="menu-item">
+      <img src="jordane-mathieu-mLtIBNInDGY-unsplash.jpg" alt="Pastries">
+      <h3>Delicious Pastries</h3>
+      <p class="price">₹85</p>
+      <input type="number" id="espresso" value="0" min="0" />
+    </div>
+
+    <div class="menu-item">
+      <img src="daniel-lincoln-ZpoR_dpHX4Q-unsplash.jpg" alt="Coffee">
+      <h3>Specialty Coffee</h3>
+      <p class="price">₹120</p>
+      <input type="number" id="muffin" value="0" min="0" />
+    </div>
+
+    <div class="menu-item">
+      <img src="mariia-lazor-IdXecWImsvQ-unsplash.jpg" alt="Sandwiches">
+      <h3>Gourmet Sandwiches</h3>
+      <p class="price">₹80</p>
+      <input type="number" id="sandwich" value="0" min="0" />
+    </div>
+  </section>
+
+  <!-- Total Amount -->
+  <div class="total">
+    Total Bill: ₹<span id="totalAmount">0.00</span>
+  </div>
+
+  <!-- Order Form -->
+  <form id="orderForm" action="OrderServlet" method="post">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="text" id="address" name="address" placeholder="Your Address" required />
+    <input type="hidden" id="totalAmountHidden" name="total" />
+    <input type="hidden" id="itemsHidden" name="items" />
+    <button type="submit">Place Order</button>
+  </form>
+
+  <script>
+    const prices = {
+      espresso: 85,
+      muffin: 120,
+      sandwich: 80
+    };
+
+    const items = {
+      espresso: "Delicious Pastries",
+      muffin: "Specialty Coffee",
+      sandwich: "Gourmet Sandwiches"
+    };
+
+    const inputs = ['espresso', 'muffin', 'sandwich'].map(id => document.getElementById(id));
+    const totalAmount = document.getElementById('totalAmount');
+    const totalAmountHidden = document.getElementById('totalAmountHidden');
+    const itemsHidden = document.getElementById('itemsHidden');
+
+    function calculateTotal() {
+      let total = 0;
+      let orderedItems = [];
+
+      inputs.forEach(input => {
+        const qty = parseInt(input.value) || 0;
+        if (qty > 0) {
+          orderedItems.push(`${qty} x ${items[input.id]}`);
+          total += qty * prices[input.id];
+        }
+      });
+
+      totalAmount.textContent = total.toFixed(2);
+      totalAmountHidden.value = total.toFixed(2);
+      itemsHidden.value = orderedItems.join(", ");
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('input', calculateTotal);
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      calculateTotal();
+      if (parseFloat(totalAmount.textContent) === 0) {
+        alert("Please select at least one item to order.");
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>

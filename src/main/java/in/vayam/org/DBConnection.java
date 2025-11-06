@@ -1,0 +1,28 @@
+package in.vayam.org;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DBConnection {
+	public static Connection getConnection() throws SQLException, ClassNotFoundException
+	{
+		String dbURL ="jdbc:mysql://localhost:3306/vayam";
+
+		String username="root";
+		String pass= "root";
+		Connection con=null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection(dbURL, username,pass);
+		} catch (ClassNotFoundException e) {
+
+			e.printStackTrace();
+		}
+		catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return con;
+	}
+}

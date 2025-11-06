@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: url('bundo-kim-qgp5EQw08hw-unsplash.jpg');
+  background-size:cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+
+/* Semi-transparent glass container */
+.container {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 20px 20px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Heading */
+.container h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #3e2c1c;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  background: linear-gradient(to right, #6f4e37, #a9744f);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  margin: 12px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+}
+a{
+text-decoration: none;
+color:white
+}
+button:hover {
+  background: linear-gradient(to right, #a9744f, #6f4e37);
+  transform: scale(1.05);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+
+
+</head>
+<body>
+<div class="container">
+<h1>Caffeine</h1>
+
+<button><a href="firstt.html">Signup</button>
+<button><a href="log.html">login</button>
+</div>
+</body>
+</html>

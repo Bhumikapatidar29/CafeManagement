@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+    }
+    .profile {
+      width: 250px;
+      background: rgba(0, 0, 0, 0.7);
+      height: 100vh;
+      color: white;
+      padding: 40px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    }
+   
+    .main-content {
+      flex-grow: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dashboard-title {
+      font-size: 32px;
+      color: white;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      width: 400px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Dashboard Logo" style="width: 80px; margin-bottom: 10px;">
+  <h2 style="font-size: 24px; margin: 0;">Admin Panel</h2>
+  <p style="font-size: 13px; color: #ccc; margin-top: 5px;">Manage Your Cafe System</p>
+  <hr style="border: 0; height: 1px; background: #444; margin: 30px 0;">
+</div>
+
+  </div>
+  <div class="main-content">
+    <div class="dashboard-title">Admin Dashboard</div>
+    <a href="showonlineorder.jsp" class="card">
+      <h2>Online Orders</h2>
+    </a>
+    <a href="showbooktable.jsp" class="card">
+      <h2>Book Table Details</h2>
+    </a>
+    <a href="showcontactus.jsp" class="card">
+      <h2>Contact Us Details</h2>
+    </a>
+  </div>
+</body>
+</html>

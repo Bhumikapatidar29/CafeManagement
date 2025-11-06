@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: url('bundo-kim-qgp5EQw08hw-unsplash.jpg');
+  background-size:cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+
+form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 400px;
+  color: white;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 15px;
+}
+
+form input::placeholder {
+  color: #eee;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+form input[type="reset"] {
+  background: #444;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.button-group input {
+  width: 45%;
+}
+h2{
+text-align: center;
+font-weight: 400;
+}
+
+</style>
+
+</head>
+<body>
+
+<form action="AddDB" method="post">
+<h2>Signup</h2>
+<label>User_id</label>
+ <input type="text" name="ui" placeholder="Enter your Id" required> <br><br>
+ <label>Name</label>
+ <input type="text" name="na" placeholder="Enter your name" required> <br><br>
+<label>Address</label>
+ <input type="text" name="ad" placeholder="Enter your address" required> <br><br>
+ <label>Email</label>
+ <input type="email" name="em" placeholder="Enter your email" required> <br><br>
+ <label>Password</label>
+  <input type="Password" name="pa" placeholder="Enter your Password" required>
+  <div class="button-group">
+ <input type="submit" value="submit"> &nbsp;&nbsp;
+ <input type="reset" value="Cancle">
+ </div>
+ </form>
+</body>
+</html>
